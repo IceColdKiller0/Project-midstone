@@ -14,7 +14,7 @@ void Environment::initCircles(size_t size) {
 
 		float x = (float)(rand() % 1000);
 		float y = (float)(rand() % 600);
-		float radius = (float)(15 + (rand() % (40 - 16)));
+		float radius = 40; //(float)(15 + (rand() % (40 - 16)));
 
 		Circle circle = Circle(radius);
 		circle.Position(x, y);

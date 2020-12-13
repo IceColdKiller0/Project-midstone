@@ -17,6 +17,9 @@ public:
 	void Acceleration(float x, float y);
 	void Velocity(float x, float y);
 
+	//void Gravity();
+	//void Gravity(float x, float y);
+
 	sf::Vector2f getVel() const;
 	sf::Vector2f getAcc() const;
 	float getPull() const;

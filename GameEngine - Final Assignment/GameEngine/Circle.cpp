@@ -2,7 +2,7 @@
 
 Circle::Circle(float r) : _pull(false), mass(r * 20.f), circleShape(sf::CircleShape(r)) {
 	circleShape.setFillColor(sf::Color::Green);
-	circleShape.setOrigin(r, r);
+	circleShape.setOrigin(40, 60);
 }
 
 Circle::~Circle() {}
@@ -14,24 +14,30 @@ void Circle::update(float deltatime) {
 
 	circleShape.move(getVel());
 
+	circleShape.rotate(10 * deltatime * 10);
+
 	//circleShape.move();
 
 	if (getPos().x < getR()) {
 		Position(getR(), getPos().y);
 		Velocity(-getVel().x, getVel().y);
+		//Gravity(getPos().x, getPos().y);
 	}
 	else if (getPos().x > 1000 - getR()) {
 		Position(1000 - getR(), getPos().y);
 		Velocity(-getVel().x, getVel().y);
+		//Gravity(getPos().x, getPos().y);
 	}
 
 	if (getPos().y < getR()) {
 		Position(getPos().x, getR());
 		Velocity(getVel().x, -getVel().y);
+		//Gravity(getPos().x, getPos().y);
 	}
 	else if (getPos().y > 600 - getR()) {
 		Position(getPos().x, 600 - getR());
 		Velocity(getVel().x, -getVel().y);
+		//Gravity(getPos().x, getPos().y);
 	}
 }
 

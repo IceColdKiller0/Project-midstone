@@ -36,6 +36,7 @@ bool Collider::CheckCollision(Collider  other, sf::Vector2f& direction, float pu
 
 				direction.x = 1.0f;
 				direction.y = 0.0f;
+				//body.setFillColor(sf::Color::Red);
 			}
 			else
 			{
@@ -44,6 +45,7 @@ bool Collider::CheckCollision(Collider  other, sf::Vector2f& direction, float pu
 
 				direction.x = -1.0f;
 				direction.y = 0.0f;
+				//body.setFillColor(sf::Color::Green);
 			}
 		}
 		else
@@ -55,6 +57,7 @@ bool Collider::CheckCollision(Collider  other, sf::Vector2f& direction, float pu
 
 				direction.x = 0.0f;
 				direction.y = 1.0f;
+				//body.setFillColor(sf::Color::Red);
 			}
 			else
 			{
@@ -63,6 +66,7 @@ bool Collider::CheckCollision(Collider  other, sf::Vector2f& direction, float pu
 
 				direction.x = 0.0f;
 				direction.y = -1.0f;
+				//body.setFillColor(sf::Color::Green);
 			}
 		}
 
@@ -71,3 +75,21 @@ bool Collider::CheckCollision(Collider  other, sf::Vector2f& direction, float pu
 
 	return false;
 }
+
+//bool Collider::circleOverlap(Circle circle1, Circle circle2) {
+//	float distance = distanceSquared(circle1.getPos(), circle2.getPos());
+//	float radiusSum = circle1.getR() + circle2.getR();
+//
+//	return distance <= radiusSum * radiusSum;
+//}
+//
+//bool Collider::circlePointOverlap(sf::Vector2f point, Circle circle) {
+//	float distance = distanceSquared(circle.getPos(), point);
+//	return distance < circle.getR()* circle.getR();
+//}
+//
+//float Collider::distanceSquared(sf::Vector2f a, sf::Vector2f b) {
+//	float distX = a.x - b.x;
+//	float distY = a.y - b.y;
+//	return distX * distX + distY * distY;
+//}

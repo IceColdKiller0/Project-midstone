@@ -2,28 +2,29 @@
 #include <SFML/Graphics.hpp>
 #include "Collider.h"
 
-class Player
+class Platform
 {
 public:
-	Player(sf::Texture* playerTexture, float speed, float jumpHeight);
-	~Player();
+	Platform(sf::Color texture, sf::Vector2f size, sf::Vector2f position);
+	~Platform();
 
-	void Update(float deltaTime);
+	//void Update(float deltatime);
+
 	void Draw(sf::RenderWindow& window);
-	void OnCollision(sf::Vector2f direction);
 
 	sf::Vector2f GetPosition() { return body.getPosition(); }
-
 	Collider GetCollider() { return Collider(body); }
+
+	void OnCollision(sf::Vector2f direction);
+
+	
 
 private:
 	sf::RectangleShape body;
-	unsigned int row;
-	float speed;
-	bool faceRight;
-
+	sf::CircleShape circle;
 	sf::Vector2f velocity;
-	bool canJump;
-	float jumpHeight;
+
+	const float gravity = 0.3f;
+	int groundHeight;
 };
 
